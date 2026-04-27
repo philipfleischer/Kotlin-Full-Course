@@ -1,6 +1,6 @@
 fun main() {
     println()
-    val car1 = Car2()
+    val car1 = Car()
 
     car1.move()
     car1.stop()
@@ -18,7 +18,7 @@ fun main() {
     car1.move()
     car1.stop()
 
-    val car2 = Car2()
+    val car2 = Car()
     car2.name = "Audi"
     car2.model = "A3"
     car2.color = "Black"
@@ -32,7 +32,7 @@ fun main() {
     car2.stop()
 }
 
-class Car2(name: String, model: String, color: String, doors: Int) {
+class Car {
     var name: String = ""
     var model: String = ""
     var color: String = ""

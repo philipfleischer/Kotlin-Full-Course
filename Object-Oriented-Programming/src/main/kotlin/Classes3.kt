@@ -1,24 +1,19 @@
 fun main() {
-    println()
-    val car1 = Car2("Mercedes", "GLA 180", "Black", 4)
+    val user = User(name="Philip", lastName="Fleischer", age=24)
+    var friend = User(name="John", lastName="Smith", age=30)
 
-    car1.move()
-    car1.stop()
-    println()
+    println("Name ${friend.name}")
+}
 
-    println("Name = ${car1.name}")
-    println("Model = ${car1.model}")
-    println("Color = ${car1.color}")
-    println("Doors = ${car1.doors}")
-    car1.move()
-    car1.stop()
+class User(name: String, var lastName: String, var age: Int) {
+    var name: String
 
-    val car2 = Car2("Audi", "A3", "Black", 4)
-    println()
-    println("Name = ${car2.name}")
-    println("Model = ${car2.model}")
-    println("Color = ${car2.color}")
-    println("Doors = ${car2.doors}")
-    car2.move()
-    car2.stop()
+    init {
+        if (name.lowercase().startsWith("p")) {
+            this.name = name
+        }else {
+            this.name = "Default User no name for startswith 'p'"
+            println("The name does not start with 'p' or 'P'")
+        }
+    }
 }

@@ -1,15 +1,10 @@
 fun main() {
     println()
-    val car1 = Car()
+    val car1 = Car2("Mercedes", "GLA 180", "Black", 4)
 
     car1.move()
     car1.stop()
     println()
-
-    car1.name = "Mercedes"
-    car1.model = "GLA 180"
-    car1.color = "Black"
-    car1.doors = 4
 
     println("Name = ${car1.name}")
     println("Model = ${car1.model}")
@@ -18,11 +13,7 @@ fun main() {
     car1.move()
     car1.stop()
 
-    val car2 = Car()
-    car2.name = "Audi"
-    car2.model = "A3"
-    car2.color = "Black"
-    car2.doors = 4
+    val car2 = Car2("Audi", "A3", "Black", 4)
     println()
     println("Name = ${car2.name}")
     println("Model = ${car2.model}")
@@ -30,19 +21,4 @@ fun main() {
     println("Doors = ${car2.doors}")
     car2.move()
     car2.stop()
-}
-
-class Car {
-    var name: String = ""
-    var model: String = ""
-    var color: String = ""
-    var doors: Int = 0
-
-    fun move() {
-        println("The car $name is moving")
-    }
-
-    fun stop() {
-        println("The car $name has stopped")
-    }
 }
