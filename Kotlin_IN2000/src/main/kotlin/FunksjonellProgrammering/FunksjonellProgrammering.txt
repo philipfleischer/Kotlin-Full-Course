@@ -1,0 +1,128 @@
+Funksjonell programmering i Kotlin.
+Plan:
+- Hva funksjoenll programmering er.
+- Anonyme funksjoner
+- Høyereordens funksjoner
+- Avveininger ved å programmere i en mer funksjoenll stil
+- Liveprogrammering med collections i Kotlin
+
+Funksjoner:
+- En funksjonreturnerer det samme output for et gitt input hver gang.
+- En funksjon har ingen sideeffekter, den returnerer verdien.
+- Fra et høyt nok abstraksjonsnivå er en funksjon og en ordbok (map) det samme.
+
+Funksjonell programmering:
+- I funksjonell programmering er funksjoner førsteklasses objekter.
+    - De kan sendes som argument til funksjoner
+    - De kan returneres av funksjoner
+    - Funksjoner er verdier.
+- Høyereordens funksjoner er funksjoenr som
+    - tar funksjoner som arguement, eller
+    - gir en funksjon som returverdi
+- I funksjonelle språk kan funksjoner som regel uttrykkes uten å navngis
+    - De kalles anonyme funksjoner eller lambda
+
+Funksjonell programmering i Kotlin
+- I kotlen er funksjoner førsteklasses objekter.
+- De lar deg programmere i en funksjonell stil.
+    - Men språket tvinger deg ikke til det.
+- Mange av idiomene er funksjonelle
+- Oppfordres til bruk av val over var (ikke-muterbare pekere)
+- Det oppfordres til bruk av ikke-muterbare datastrukturer (mutableListOf osv.)
+- Standardbiblioteket for samlinger (Collections) er i stor grad funksjonell.
+
+Ikke-muterbar data
+- En funksjon vil aldri mutere data, fordi å endre tilstand er en sideeffekt.
+- Dersom du skriver ren funksjonell kode vil det aldri ha noen hensikt å behandle muterbar data.
+- En variabel deklarert med val tilordnres en verdi som ikke kan endres.
+- I Kotlin er datastrukturene List, Set og Map ikke-muterbare.
+    - Men kommer i muterbare varianter MutableList, MutableSeet, MutableMap
+
+Hva funksjoenll programmering forenkler:
+- Funksjonell kode er enkel å teste.
+    - Alt funksjonen bruker er gitt som input
+    - En funksjon gjør kun én ting (returnerer en verdi)
+    - Dersom funksjonen er vanskelig å teste burde den kanskje deles opp i mindre funksjoner.
+    - Det at det er funksjonell programmering paradigme gjør koden lettere å teste, modulere og vedlikeholde.
+- Det er enklere å debugge funksjonell kode
+    - Feilen vil være i stack trace som resulterte i feilen.
+- Funksjonell kode er enklere å resonnere om
+    - Du kan bytte ut et sammensatt uttrykk med resultatet av uttrykket uten å endre programmet.
+- Samtidige (concurrent) programmer er vesentlig enklere å få riktig, når vi vet at ting ikke endrer seg.
+    - Ikke-muterbar data er trådsikker, siden det ikke endrer seg underveis.
+
+
+Eksempel: Fakultetsfunksjonen:
+
+fun factorial(n: Int): Int {
+    var i = n
+    var res = 1
+
+    while (i > 0) {
+        res *= i
+        i--
+    }
+    return res
+}
+
+Vi starter med to muterbare var (i og res) og en løkke (while).
+(Jobbet i: Factorial.kt)
+
+
+Anonyme funksjoner i Kotlin:
+- Kotlin har en enkel syntaks for å uttrykke anonyme funksjoner.
+    - En funksjon som tar et argument og ganger det med seg selv:
+        { x -> x * x }
+    - En funksjon som tar to argumenter og tar summen av dem:
+        { x, y -> x + y }
+    - I en funksjon av ett argument kan argumentet referes til som it
+        { it * it }
+
+Collections i Kotlin
+- Kotlin har et rikt bibliotek av funksjoner på samlinger.
+- Her er noen av dem:
+    - first
+    - last
+    - forEach
+    - map
+    - filter
+    - fold
+    - sortedBy
+    - find
+    - findLast
+    - count
+    - partition
+    - zip
+    - zipWithNext
+    - ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
