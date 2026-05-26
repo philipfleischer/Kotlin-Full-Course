@@ -28,5 +28,5 @@ fun main() {
     // Sortere etter popularitet
     names.sortedBy { it. popularity }.take(5).forEach { println(it) }
     println()
-    names.filter { it.name.contains("-")}.sortedBy { -it. popularity }.take(5).forEach { println(it) }
+    names.filter { it.name.contains("-")}.sortedBy { -it.popularity }.take(5).forEach { println(it) }
 }
